@@ -1,11 +1,15 @@
 ---
 import '../styles/global.css';
+
+import Footer from'../components/Footer.astro';
+import Header from '../components/Header.astro';
+
 const pageTitle = "Sobre mi";
 
 const identity = {
   firstName: "Mauri",
   country: "Argentina",
-  occupation: "Web development",
+  occupation: "Full Stack WebDeveloper",
   hobbies: ["Caminata con Aquiles", "VideoGames", "River Plate"],
 };
 
@@ -47,9 +51,7 @@ const skillFW='bold';
     </style>
   </head>
   <body>
-    <a href="/">Inico</a>
-    <a href="/about/">Sobre mi</a>
-    <a href="/blog/">Blog</a>
+    <Header />
     <h1>{pageTitle}</h1>
     <h2>... ¡y mi nuevo sitio Astro!</h2>
 
@@ -65,15 +67,17 @@ const skillFW='bold';
     <p>He aquí algunos datos sobre mí:</p>
     <ul>
       <li>Me llamo {identity.firstName}.</li>
-      <li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
-      {
-        identity.hobbies.length >= 2 && (
-          <li>
-            Dos de mis aficiones son: {identity.hobbies[0]} y{" "}
-            {identity.hobbies[1]}
-          </li>
-        )
-      }
+      <li>Vivo en {identity.country} y trabajo como <strong>{identity.occupation}</strong>.</li>
+      <li>Mis aficiones son:</li>
+      <ol>
+        {      
+          identity.hobbies.map((h)=>        
+            <li>
+              {h}
+            </li>
+          )
+        }
+      </ol>
     </ul>
     <p>Mis habilidades son:</p>
     <ul>
@@ -90,5 +94,9 @@ const skillFW='bold';
         <p>Mi objetivo no son 3 días.</p>
       )
     }
+    <Footer/>
+    <script>
+			import "../scripts/menu.js";
+		</script>
   </body>
 </html>

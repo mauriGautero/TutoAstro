@@ -1,0 +1,13 @@
+---
+
+const platform="GitHub";
+const username="AstroMauri";
+import Social from "./Social.astro";
+---
+
+<footer>
+    <p>¡Más información sobre mis proyectos en <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p>
+    <Social platform="Twitter" username="maurix"/>
+    <Social platform="Github" username="maurix"/>
+    <Social platform="Youtube" username="maurix"/>
+</footer>

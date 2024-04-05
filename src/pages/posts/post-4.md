@@ -12,5 +12,7 @@ tags: ["astro", "éxitos"]
 Esta entrada debería aparecer con las demás entradas de mi blog, porque `Astro.glob()` está devolviendo una lista de todas mis entradas para crear mi lista.
 
 ```javascript
-console.log('Aprendiendo Astro!! 🚀')
+
+  console.log('Aprendiendo Astro!! 🚀') 
+
 ```

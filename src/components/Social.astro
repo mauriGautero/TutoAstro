@@ -1,15 +1,16 @@
 ---
+import { slide } from "astro:transitions";
 const {platform, username}=Astro.props;
 
 ---
 
-<a href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a class="mx-2" transition:animate={slide({duration:'2s'})}  href={`https://www.${platform}.com/${username}`}>{platform}</a>
 
 <style>
     a {
       padding: 0.5rem 1rem;
       color: white;
-      background-color: #4c1d95;
+      background-color: #1d4195;
       text-decoration: none;
       border-radius: .5em;
     }

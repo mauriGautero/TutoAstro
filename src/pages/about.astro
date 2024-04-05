@@ -23,7 +23,7 @@ const skills = [
   "Redacción de documentos",
 ];
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 const skillsColor = "green";
 const titleColor = "purple";
@@ -32,9 +32,10 @@ const skillFW='bold';
 
     <style define:vars={{ skillsColor, titleColor, skillFW }}>
       h1 {
-        color: var(--titleColor);
+        color: black;
+        background-color: greenyellow;
         font-size: 4rem;
-      }
+      }    
       .skill {
         color: var(--skillsColor);
         font-weight: var(--skillFW);
@@ -42,8 +43,8 @@ const skillFW='bold';
     </style>
  
  <BaseLayout pageTitle={pageTitle}>
-    <h1>{pageTitle}</h1>
-    <h2>... ¡y mi nuevo sitio Astro!</h2>
+    <h1 class="rounded-lg px-8">{pageTitle}</h1>
+    <h2 class="font-semibold mb-2">... ¡y mi nuevo sitio Astro!</h2>
     <p>
       Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda
       página de mi sitio web, ¡y es la primera que he construido yo mismo!
@@ -57,18 +58,18 @@ const skillFW='bold';
     <ul>
       <li>Me llamo {identity.firstName}.</li>
       <li>Vivo en {identity.country} y trabajo como <strong>{identity.occupation}</strong>.</li>
-      <li>Mis aficiones son:</li>
+      <li class="font-semibold my-2">Mis aficiones son:</li>
         <ol>
           {      
             identity.hobbies.map((h)=>        
-              <li>
+              <li class=" mx-4 text-sky-800">
                 {h}
               </li>
             )
           }
         </ol>
     </ul>
-    <p>Mis habilidades son:</p>
+    <p class="m-2">Mis habilidades son:</p>
     <ul>
       {skills.map((skill) => <li class="skill skillColor  ">{skill}</li>)}
     </ul>
@@ -80,7 +81,7 @@ const skillFW='bold';
       goal === 3 ? (
         <p>Mi objetivo es terminar en 3 días.</p>
       ) : (
-        <p>Mi objetivo no son 3 días.</p>
+        <p class="mb-2">Mi objetivo no son 3 días.</p>
       )
     }  
 </BaseLayout>

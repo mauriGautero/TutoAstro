@@ -6,9 +6,9 @@ const pageTitle='Indice de Tags';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <h2>Page index tags</h2>   
+    <h2 class="m-4">Índice de Etiquetas</h2>   
     <div class="tags">
-        {tags.map(t=><p><a class="links tag" href={`/tags/${t}`}>{t}</a></p>)}
+        {tags.map(t=><p class="flex justify-between"><a class="links tag" href={`/tags/${t}`}>{t}</a></p>)}
     </div>
 </BaseLayout>
 <style>

@@ -5,7 +5,7 @@ pubDate: 2024-04-05
 description: 'Este es la primera publicación de mi nuevo blog Astro.'
 author: 'Alumno de Astro'
 image:
-    url: 'https://docs.astro.build/assets/arc.webp'
+    url: 'https://docs.astro.build/default-og-image.png'
     alt: 'El logotipo completo de Astro.'
 tags: ["astro", "bloguear", "aprender en público"]
 ---

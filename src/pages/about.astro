@@ -1,8 +1,6 @@
 ---
 import '../styles/global.css';
-
-import Footer from'../components/Footer.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "Sobre mi";
 
@@ -32,13 +30,6 @@ const titleColor = "purple";
 const skillFW='bold';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
     <style define:vars={{ skillsColor, titleColor, skillFW }}>
       h1 {
         color: var(--titleColor);
@@ -49,12 +40,10 @@ const skillFW='bold';
         font-weight: var(--skillFW);
       }
     </style>
-  </head>
-  <body>
-    <Header />
+ 
+ <BaseLayout pageTitle={pageTitle}>
     <h1>{pageTitle}</h1>
     <h2>... ¡y mi nuevo sitio Astro!</h2>
-
     <p>
       Estoy trabajando en el tutorial introductorio de Astro. Esta es la segunda
       página de mi sitio web, ¡y es la primera que he construido yo mismo!
@@ -69,15 +58,15 @@ const skillFW='bold';
       <li>Me llamo {identity.firstName}.</li>
       <li>Vivo en {identity.country} y trabajo como <strong>{identity.occupation}</strong>.</li>
       <li>Mis aficiones son:</li>
-      <ol>
-        {      
-          identity.hobbies.map((h)=>        
-            <li>
-              {h}
-            </li>
-          )
-        }
-      </ol>
+        <ol>
+          {      
+            identity.hobbies.map((h)=>        
+              <li>
+                {h}
+              </li>
+            )
+          }
+        </ol>
     </ul>
     <p>Mis habilidades son:</p>
     <ul>
@@ -93,10 +82,5 @@ const skillFW='bold';
       ) : (
         <p>Mi objetivo no son 3 días.</p>
       )
-    }
-    <Footer/>
-    <script>
-			import "../scripts/menu.js";
-		</script>
-  </body>
-</html>
+    }  
+</BaseLayout>

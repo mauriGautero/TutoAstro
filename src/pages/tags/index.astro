@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const tags = ['astro', 'bloguear', 'aprender en público', 'éxitos', 'contratiempos', 'comunidad'];
+const allPost=Astro.glob('../posts/*.md');
+const pageTitle='Indice de Tags';
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <h2>Page index tags</h2>   
+    <div class="tags">
+        {tags.map(t=><p><a class="links tag" href={`/tags/${t}`}>{t}</a></p>)}
+    </div>
+</BaseLayout>
+<style>
+    a {
+      color: #00539F;
+    }
+  
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .tag {
+      margin: 0.25em;
+      border: dotted 1px #a1a1a1;
+      border-radius: .5em;
+      padding: .5em 1em;
+      font-size: 1.15em;
+      background-color: #F8FCFD;
+    }
+  </style>
